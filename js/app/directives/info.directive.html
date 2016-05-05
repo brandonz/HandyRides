@@ -1,4 +1,6 @@
 <div class="modal-header">
+	<img class="group list-group-image" ng-if="mc.event.logo.url" ng-src="{{mc.event.logo.url}}" alt="" />
+	<img class="group list-group-image" ng-if="!mc.event.logo.url" src="./images/Blair_Arch2.JPG" alt="" width = "450" height = "200"/>
 	<h3 class="modal-title">{{mc.event.name.text}}</h3>
 </div>
 

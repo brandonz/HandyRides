@@ -89,6 +89,13 @@
                 class="glyphicon glyphicon-th"></span>Grid</a>
         </div>
     </div>
+    <center>
+    <div class="row" ng-show="!events">
+            <img src="./images/loading.gif">
+        </div>
+    </center>
+
+        <div class="row" ng-show="show()">
     <div id="products" class="row list-group">
         <div class="item  col-xs-4 col-lg-4" ng-repeat="event in events.events | orderBy:'start.local'">
             <div class="thumbnail">
@@ -124,7 +131,7 @@
 <!-- </body> -->
 
 	<!-- Loading gif and event info -->
-	<center>
+	<!-- <center>
 		<div class="row" ng-show="!events">
 			<img src="./images/loading.gif">
 		</div>
@@ -138,6 +145,6 @@
 			</div>
 
 		</div>
-	</center>
+	</center> -->
 
 </div>
