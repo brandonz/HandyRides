@@ -26,7 +26,7 @@
 							$cookies.email = email;
 							$cookies.passw = passw;
 							vm.test = "user created!"
-							$window.location.href = "https://brandonz.mycpanel2.princeton.edu/public/index.html";
+							$window.location.href = "https://brandonz.mycpanel2.princeton.edu/HandyRides/index.html";
 						}
 					});
 			}
@@ -45,7 +45,7 @@
 					else {
 						$cookies.email = email;
 						$cookies.passw = passw;
-						$window.location.href = "https://brandonz.mycpanel2.princeton.edu/public/index.html";
+						$window.location.href = "https://brandonz.mycpanel2.princeton.edu/HandyRides/index.html";
 					}
 				});
 		}
