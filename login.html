@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HandyRides</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<link rel="shortcut icon" href="PUT YOUR FAVICON HERE">-->
+        
+        <!-- Google Web Font Embed -->
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.css" rel='stylesheet' type='text/css'>
+
+        <!-- Custom styles for this template -->
+        <link href="js/colorbox/colorbox.css"  rel='stylesheet' type='text/css'>
+        <link href="css/templatemo_style.css"  rel='stylesheet' type='text/css'>
+
+        <!-- Login -->
+        <!-- <link rel="stylesheet" href="material-login-form/css/reset.css"> -->
+
+        <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
+        <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+
+        <link rel="stylesheet" href="material-login-form/css/style.css">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    
+    <body ng-app="login" ng-controller="loginController">
+
+        <div class="templatemo-top-bar" id="templatemo-top">
+            <div class="container">
+                <div class="subheader">
+                    <h4> <a href="#" ng-click="openModal()">{{text}}</a></h4>
+                </div>
+            </div>
+        </div>
+        <div class="templatemo-top-menu">
+            <div class="container">
+                <!-- Static navbar -->
+                <div class="navbar navbar-default" role="navigation">
+                    <div class="container">
+                        <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                </button>
+                                <a href="#" class="navbar-brand"><img src="images/temp.jpg" alt="Urbanic Template" title="Urbanic Template" /></a>
+                        </div>
+                        <div class="navbar-collapse collapse" id="templatemo-nav-bar">
+                            <ul class="nav navbar-nav navbar-right" style="margin-top: 40px;">
+                                <li class="active"><a href="#templatemo-top">HOME</a></li>
+                                <li><a href="#login">LOGIN</a></li>
+                                <!--li><a href="#templatemo-about">CONTACT</a></li>
+                                <li><a href="#templatemo-portfolio">PORTFOLIO</a></li>
+                                <li><a href="#templatemo-blog">BLOG</a></li>
+                                <li><a rel="nofollow" href="http://www.facebook.com/templatemo" 
+                                		class="external-link" target="_parent">EXTERNAL</a></li-->
+                                <li><a href="#templatemo-contact">CONTACT</a></li>
+                            </ul>
+                        </div><!--/.nav-collapse -->
+                    </div><!--/.container-fluid -->
+                </div><!--/.navbar -->
+            </div> <!-- /container -->
+        </div>
+        
+        <div>
+            <!-- Carousel -->
+            <div id="templatemo-carousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#templatemo-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#templatemo-carousel" data-slide-to="1"></li>
+                    <li data-target="#templatemo-carousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h1 style="color:black">RETHINK TRAVEL</h1>
+                                    <p style="color:black">Imagine a world where your travels are no longer limited by your vehicle, roads are no longer congested, and every trip means meeting a new friend. </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="container">
+                                <div class="carousel-caption">
+                                    	<h1 style="color:black">JOIN US</h1>
+                                        <p style="color:black">HandyRides is a premier ridesharing application, highlighting events we think you'd like and matching you with people who like those events too. </p>
+                                </div>
+                        </div>
+                    </div>
+                        <div class="item">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                	<h1 style="color:black"> Let's travel together </h1>
+                                <p><a class="btn btn-lg btn-green" href="#" role="button" style="margin: 20px;">Login/Register here</a> </p>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <a class="left carousel-control" href="#templatemo-carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                <a class="right carousel-control" href="#templatemo-carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+            <!-- /#templatemo-carousel -->
+        </div>
+
+        <div class="templatemo-welcome" id="templatemo-welcome">
+            <div class="container">
+                <div class="templatemo-slogan text-center">
+                    <span class="txt_darkgrey">Welcome to </span><span class="txt_orange">HandyRides</span>
+                    <p class="txt_slogan"><i>Let's travel together</i></p>
+                </div>	
+            </div>
+        </div>
+        
+        <div class="templatemo-service">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="templatemo-service-item">
+                            <div>
+                                <img src="images/rsz_car.jpg" alt="icon" />
+                                <span class="templatemo-service-item-header">REDUCE CONGESTION</span>
+                            </div>
+                            <p>With people travelling together to events, we can help reduce the number of cars on the road. That means less traffic, and less anger and frustration for all of you.</p>
+                            <div class="text-center">
+                            	<a href="#" 
+                                	class="templatemo-btn-read-more btn btn-orange">READ MORE</a>
+                            </div>
+                            <br class="clearfix"/>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="templatemo-service-item">
+                            <div>
+                                <img src="images/battery.png" alt="icon"/>
+                                <span class="templatemo-service-item-header">EXTREME EFFICIENCY</span>
+                            </div>
+							<p>HandyRides is user-oriented, and we will always put your convenience first. We use your preferred home location to suggest events for you and match you with other people attending the same events so that you can plan entire trips with just the click of a button.</p>
+                            <div class="text-center">
+                                <a href="#" 
+                                	class="templatemo-btn-read-more btn btn-orange">READ MORE</a>
+                            </div>
+                            <br class="clearfix"/>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="templatemo-service-item">
+                            <div>
+                                <img src="images/rsz_lock.png" alt="icon"/>
+                                <span class="templatemo-service-item-header">PRIVACY AND SECURITY</span>
+                            </div>
+                            <p>At HandyRides, we like to keep everything on a need-to-know basis. That means we we will never ask for more information than is strictly necessary to make your life easier. And, of course, you can be assured that your information is safe with us.</p>
+                            <div class="text-center">
+                                <a href="#" 
+                                	class="templatemo-btn-read-more btn btn-orange">READ MORE</a>
+                            </div>
+                            <br class="clearfix"/>
+                        </div>
+                        <br class="clearfix"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LOGIN BEGINS HERE  -->
+        <div id="login" class="login-body">
+            <hr>
+            <br>
+            <br>
+            <center>
+                <div class="container login">
+                  <div class="card"></div>
+                  <div class="card">
+                    <h1 class="title">Login</h1>
+                    <form ng-submit='login(email, passw)'>
+                      <div class="input-container">
+                        <input type="text" id="email" required="required" ng-model="email"/>
+                        <label for="Username">Email</label>
+                        <div class="bar"></div>
+                      </div>
+                      <div class="input-container">
+                        <input type="password" id="Password" required="required" ng-model="passw"/>
+                        <label for="Password">Password</label>
+                        <div class="bar"></div>
+                      </div>
+                      <div class="button-container">
+                        <button><span>Go</span></button>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="card alt">
+                    <div class="toggle"></div>
+                    <h1 class="title">Register
+                      <div class="close"></div>
+                    </h1>
+                    <form ng-click='create(fname, lname, remail, rpass, rrpass)'>
+                      <div class="input-container">
+                        <input type="text" id="fName" required="required" ng-model="fname"/>
+                        <label for="Username">First Name</label>
+                        <div class="bar"></div>
+                      </div>
+
+                      <div class="input-container">
+                        <input type="text" id="lName" required="required" ng-model="lname"/>
+                        <label for="Username">Last Name</label>
+                        <div class="bar"></div>
+                      </div>
+
+                      <div class="input-container">
+                        <input type="text" id="email" required="required" ng-model="remail"/>
+                        <label for="email">Email</label>
+                        <div class="bar"></div>
+                      </div>
+
+                      <div class="input-container">
+                        <input type="password" id="Password" required="required" ng-model="rpass"/>
+                        <label for="Password">Password</label>
+                        <div class="bar"></div>
+                      </div>
+
+                      <div class="input-container">
+                        <input type="password" id="Password" required="required" ng-model="rrpass"/>
+                        <label for="Password">Repeat Password</label>
+                        <div class="bar"></div>
+                      </div>
+
+                      <div class="button-container">
+                        <button><span>Next</span></button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+            </center>
+            <br>
+            <br>
+            <br>
+        </div>
+
+        <div id="templatemo-contact">
+            <div class="container">
+                <div class="row">
+                    <div class="templatemo-line-header head_contact">
+                        <div class="text-center">
+                            <hr class="team_hr team_hr_left hr_gray"/><span class="txt_darkgrey">CONTACT US</span>
+                            <hr class="team_hr team_hr_right hr_gray"/>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="templatemo-contact-map" id="map-canvas"> </div>  
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="col-md-4 contact_right">
+                        
+                        <form class="form-horizontal" action="#">
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Your Name..." maxlength="40" />
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Your Email..." maxlength="40" />
+                            </div>
+                            <div class="form-group">
+                                <textarea  class="form-control" style="height: 130px;" placeholder="Write down your message..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-orange pull-right">SEND</button>
+                        </form>
+                        	
+                    </div>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /#templatemo-contact -->
+
+        <div class="templatemo-footer" >
+            <div class="container">
+                <div class="row">
+                    <div class="text-center">
+
+                        <div class="footer_container">
+                            <ul class="list-inline">
+                                <li>
+                                    <h4> Belinda Ji </h4>
+                                </li>
+                                <li>
+                                    <h4> Brandon Zhou </h4>
+                                </li>
+                                <li>
+                                    <h4> Jessic Zou </h4>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer_bottom_content">
+                   			<img src="images/temp.jpg" width = "123" height = "30"/>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js"  type="text/javascript"></script>
+        <script src="js/stickUp.min.js"  type="text/javascript"></script>
+        <script src="js/colorbox/jquery.colorbox-min.js"  type="text/javascript"></script>
+        <script src="js/templatemo_script.js"  type="text/javascript"></script>
+        <script src="material-login-form/js/index.js"></script>
+		
+        <!-- angular  -->
+        <script src="js/angular/angular.js"></script>
+        <script src="js/angular/angular-resource.js"></script>
+        <script src="js/angular/angular-route.js"></script>
+        <script src="js/angular/ui-bootstrap.js"></script>
+        <script src="js/angular/ui-bootstrap-tpls.js"></script>
+        <script src="js/angular/angular-cookies.min.js"></script>
+
+         <!-- My angular code -->
+        <script src="js/app/login/login.module.js"></script>
+        <script src="js/app/login/login.controller.js"></script>
+
+        <script src="js/app/login/login.service.js"></script>
+    </body>
+</html>
