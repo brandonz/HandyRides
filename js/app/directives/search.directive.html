@@ -23,6 +23,12 @@
             </div>
         </div>
     </div>
+    <div>
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>Filter</label>
+        <input ng-model="searchFilter">
+      </md-input-container>
+    </div>
 
 	<h2 ng-if='near'>Events Around You</h2>
 	<br>
@@ -117,7 +123,7 @@
 
     <div class="row" ng-show="show()">
     <div id="products" class="row list-group">
-        <div class="item  col-xs-4 col-lg-4" ng-repeat="event in events.events | orderBy:'start.local'">
+        <div class="item  col-xs-4 col-lg-4" ng-repeat="event in events.events | orderBy:'start.local' | filter: searchFilter">
             <div class="thumbnail">
                 <img class="group list-group-image" ng-if="event.logo.url" ng-src="{{event.logo.url}}" alt="" />
                 <img class="group list-group-image" ng-if="!event.logo.url" src="./images/Blair_Arch2.JPG" alt="" width = "450" height = "200"/>
