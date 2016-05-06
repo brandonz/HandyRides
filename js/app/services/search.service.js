@@ -9,7 +9,7 @@
 
 	function service($resource, $q) {
 		// OAuth token
-		var token = "JW2PZFPUASO3BMPSC2R3";
+		var token = "YYAA4KPR2XGASFRF6JIH";
 
 		// returned resources and function to make requests to the eventResource
 		var service = {

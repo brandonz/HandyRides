@@ -13,6 +13,7 @@
 		vm.change = change;
 		vm.openModal = openModal;
 		vm.openRegisterModal = openRegisterModal;
+		vm.refresh = refresh();
 
 		vm.user = {fname: ""};
 		vm.email = $cookies.email;
@@ -26,6 +27,11 @@
 			$window.location.href = "http://brandonz.mycpanel2.princeton.edu/HandyRides/login.html";
 		// else get user data
 		else {
+			refresh();
+		}
+
+		function refresh() {
+			vm.loading = true;
 			$resource('https://handyrides-server.herokuapp.com/api/users/:email/:passw').query({email:vm.email, passw: vm.passw}).$promise
 				.then(function(result){
 						if (result.length == 0)
@@ -33,7 +39,7 @@
 						else
 							vm.user = result[0];
 							angular.forEach(vm.user.events, function(eventObj){
-								$resource("https://www.eventbriteapi.com/v3/events/"+eventObj.id+"/?token=JW2PZFPUASO3BMPSC2R3").get({}).$promise
+								$resource("https://www.eventbriteapi.com/v3/events/"+eventObj.id+"/?token=YYAA4KPR2XGASFRF6JIH").get({}).$promise
 									.then(function(eventRes){
 										// console.log(eventRes);
 										var neventObj = eventRes;
@@ -46,6 +52,8 @@
 		}
 
 		function change(view) {
+			if (view == 'home')
+				refresh();
 			vm.show = view;
 		}
 
@@ -76,6 +84,9 @@
 				resolve: {
 					eventObj: function() {
 						return eventData;
+					},
+					user: function() {
+						return vm.user;
 					}
 				}
 			});

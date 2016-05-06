@@ -8,7 +8,7 @@
 		<h4><center> Are you a </center></h4>
 		<div>
 		</div>
-		<h4><center> <button type = "button" class="btn btn-primary btn-lg">Rider</button> &nbsp or &nbsp
+		<h4><center> <button type = "button" class="btn btn-primary btn-lg" ng-click="mc.registerRider()">Rider</button> &nbsp or &nbsp
 			<button type = "button" class="btn btn-info btn-lg" ng-click='mc.change("driver")'>Driver</button></center></h4>
 	</div>
 
@@ -33,6 +33,25 @@
 
 		    <br>
 		    <br>
+
+		    <div class="row">
+			    <div class="col-xs-6">
+			    	<h4>Date</h4>
+			    	<input type="date" ng-model="date">
+			    </div>
+			    <div class="col-xs-6">
+			    	<h4>Time</h4>
+			    	<input type="time" ng-model="time">
+			    </div>
+			</div>
+
+			<br>
+			 <md-input-container md-no-float class="md-block">
+	          <input ng-model="address" placeholder="Address">
+	        </md-input-container>
+
+	        <br>
+	        <md-button class="md-accent" ng-click='mc.registerDriver(seats,date,time,address)'>Submit</md-button>
 	    </center>
 
 	</div>
