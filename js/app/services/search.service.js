@@ -16,7 +16,8 @@
 			eventResource: $resource('https://www.eventbriteapi.com/v3/events/search/'),
 			testResource1: $resource('http://ip-api.com/json'),
 			testResource2: $resource('https://api.ipify.org/'),
-			getEvents: getEvents
+			getEvents: getEvents,
+			search: search
 		};
 
 		return service;
@@ -26,6 +27,11 @@
 			// return service.testResource1.get().$promise;
 			// return service.testResource2.get({format:'json'}).$promise;
 			return $resource('https://www.eventbriteapi.com/v3/events/search/' + '?token=' + token).get({'location.latitude': position.lat, 'location.longitude': position.lng}).$promise;
+		}
+
+		function search(words, city) {
+
+			return $resource('https://www.eventbriteapi.com/v3/events/search/' + '?token=' + token).get({'q': words, 'venue.city': city}).$promise;
 		}
 	}
 

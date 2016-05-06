@@ -9,7 +9,7 @@
             <div class="col-xs-5">
               <md-input-container class="md-block" flex-gt-sm>
                 <label>Key Words</label>
-                <input ng-model="search">
+                <input ng-model="words">
               </md-input-container>
             </div>
             <div class="col-xs-5">
@@ -19,7 +19,7 @@
               </md-input-container>
             </div>
             <div class="col-xs-2">
-                <md-button class="md-accent" ng-click=''>Submit</md-button>
+                <md-button class="md-accent" ng-click='search(words, city)'>Submit</md-button>
             </div>
         </div>
     </div>

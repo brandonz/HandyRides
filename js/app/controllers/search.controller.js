@@ -16,9 +16,22 @@
         };
         vm.error = "";      //error message
         vm.show = show;     //boolean function
+        vm.search = search;
  
         // get user's location and events around them
         getLocation()
+
+        // search
+        function search(words, city) {
+            if (words || city) {
+                // key words only
+                vm.events = null;
+                searchService.search(words, city)
+                    .then(function(result){
+                        vm.events = result;
+                    });
+            }
+        }
 
         // makes a call to the Eventbrite API through the searchService
         function getEvents(position) {
