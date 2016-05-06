@@ -35,8 +35,8 @@
 		                                {{event.start.local | date:'medium'}} </p>
 		                        </div>
 		                        <div class="col-xs-12 col-md-6">
-		                            <a class="btn btn-primary btn-lg" href="" ng-click="openRegisterModal(event)" ng-show="event.userStatus == 'rider'">Rider</a>
-		                            <a class="btn btn-info btn-lg" href="" ng-click="openRegisterModal(event)" ng-show="event.userStatus == 'driver'">Driver</a>
+		                            <a class="btn btn-primary btn-lg" href="" ng-click="openRiderList(event.id)" ng-show="event.userStatus == 'rider'">Rider</a>
+		                            <a class="btn btn-info btn-lg" href="" ng-click="openDriverList(event.id)" ng-show="event.userStatus == 'driver'">Driver</a>
 		                        </div>
 		                    </div>
 		                </div>

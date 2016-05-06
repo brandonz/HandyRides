@@ -619,6 +619,12 @@ ul.templatemo-project-gallery  li  a img:hover {
 	
 }
 
+.dividerdemoBasicUsage .face {
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  width: 48px;
+  margin: 16px; }
+
 
 @media (max-width:991px) {
     .team-inner {
