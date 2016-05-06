@@ -94,6 +94,38 @@
 				}
 			});
 		}
+
+		function openRiderList(eventID) {
+			var modalInstance = $modal.open({
+				templateUrl: 'js/app/directives/rider.directive.html',
+				controller: 'listController as mc',
+				size: 'lg',
+				resolve: {
+					eventid: function() {
+						return eventID;
+					},
+					status: function() {
+						return 'rider';
+					}
+				}
+			});
+		}
+
+		function openDriverList(eventID) {
+			var modalInstance = $modal.open({
+				templateUrl: 'js/app/directives/rider.directive.html',
+				controller: 'listController as mc',
+				size: 'lg',
+				resolve: {
+					eventid: function() {
+						return eventID;
+					},
+					status: function() {
+						return 'driver';
+					}
+				}
+			});
+		}
 	}
 	
 })();
