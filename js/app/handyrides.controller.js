@@ -6,7 +6,7 @@
 		.module('handyrides')
 		.controller('hrController', controller);
 
-	function controller($scope, $q, $cookies, $window, $resource, $modal){
+	function controller($scope, $q, $cookies, $window, $resource, $modal, searchService){
 		var vm = $scope;
 		vm.show = 'home';
 		vm.loading = true;
@@ -20,6 +20,7 @@
 		vm.email = $cookies.email;
 		vm.passw = $cookies.passw;
 		vm.userEvents = [];
+		vm.recEvents = [];
 
 		vm.logout = logout;
 
@@ -51,6 +52,12 @@
 							});
 							vm.loading = false;
 					});
+
+			searchService.search($cookies.keywords, "")
+				.then(function(result){
+					vm.recEvents = result.events;
+					console.log(vm.recEvents);
+				});
 		}
 
 		function change(view) {

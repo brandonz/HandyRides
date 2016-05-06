@@ -6,8 +6,9 @@
         .module('handyrides')
         .controller('searchController', controller);
 
-    function controller($scope, searchService){
+    function controller($scope, searchService, $cookies){
         var vm = $scope;
+        vm.near = true;
         vm.events = null;   //events data from Eventbrite API
         vm.pos = {          //browser position
             lat: 0,
@@ -24,6 +25,8 @@
         // search
         function search(words, city) {
             if (words || city) {
+                $cookies.keywords = words;
+                vm.near = false;
                 // key words only
                 vm.events = null;
                 searchService.search(words, city)
