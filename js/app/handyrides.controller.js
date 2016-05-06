@@ -71,6 +71,9 @@
 				resolve: {
 					eventObj: function() {
 						return eventData;
+					},
+					user: function() {
+						return vm.user;
 					}
 				}
 			});

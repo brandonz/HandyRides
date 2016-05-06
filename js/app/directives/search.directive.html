@@ -4,6 +4,26 @@
 <link href="css/gallery.css" rel='stylesheet' type='text/css'>
 
 <div class="container" ng-controller="searchController">
+    <div class="row">
+        <div layout-gt-sm="row">
+            <div class="col-xs-4">
+              <md-input-container class="md-block" flex-gt-sm>
+                <label>Key Words</label>
+                <input ng-model="search">
+              </md-input-container>
+            </div>
+            <div class="col-xs-4">
+              <md-input-container class="md-block" flex-gt-sm>
+                <label>City</label>
+                <input ng-model="city">
+              </md-input-container>
+            </div>
+            <div class="col-xs-4">
+                <md-button class="md-accent" ng-click='mc.registerDriver(seats,date,time,address)'>Submit</md-button>
+            </div>
+        </div>
+    </div>
+
 	<h1>Events Around You</h1>
 	<br>
 
