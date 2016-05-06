@@ -36,7 +36,12 @@
 
         function sendemail(email, fname) {
             console.log('test');
-            $window.open("mailto:"+ email + "?subject=HandyRides&body=Hello "+fname+", I would like to request to ride with you!","_self");
+            var link = "mailto:"+ email
+             + "?subject=HandyRides"
+             + "&body=" + escape("Hello "+fname+", I would like to request a ride with you!")
+
+            $window.location.href = link;
+            // $window.open("mailto:"+ email + "?subject=HandyRides&body=Hello "+fname+", I would like to request to ride with you!","_self");
         }
     }
 
