@@ -44,4 +44,39 @@
 		        </div>
 		    </div> 
 	    </div>
+
+	    <h3> Events You May Be Interested In</h3>
+<center>
+    <div class="row" ng-show="!events">
+            <img src="./images/loading.gif">
+        </div>
+    </center>
+
+    <div class="row" ng-show="show()">
+    <div id="products" class="row list-group">
+        <div class="item  col-xs-4 col-lg-4" ng-repeat="event in recEvents | orderBy:'start.local'">
+            <div class="thumbnail">
+                <img class="group list-group-image" ng-if="event.logo.url" ng-src="{{event.logo.url}}" alt="" />
+                <img class="group list-group-image" ng-if="!event.logo.url" src="./images/Blair_Arch2.JPG" alt="" width = "450" height = "200"/>
+                <div class="caption">
+                    <h4 class="group inner list-group-item-heading">
+                        <a href="{{event.url}}">{{event.name.text}}</a></h4>
+                    <p class="group inner list-group-item-text">
+                        <div>{{event.description.text.substring(0,100) + "..."}}</div>
+                        <div><a href="" ng-click="openModal(event)">Read more</a></div></p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                                {{event.start.local | date:'medium'}} </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <a class="btn btn-success" href="" ng-click="openRegisterModal(event)">Register Here</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 </div>
