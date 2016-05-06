@@ -12,12 +12,12 @@
         <h3> Events You're Currently Registered For </h3>
 
 	    <center>
-	    <div class="row" ng-show="!events">
-	            <img src="./images/loading.gif">
-	    </div>
+		    <div class="row" ng-show="loading">
+		            <img src="./images/loading.gif">
+		    </div>
 	    </center>
 
-	    <div class="row" ng-show="show()">
+	    <div class="row" ng-show="!loading">
 		    <div id="products" class="row list-group">
 		        <div class="item  col-xs-4 col-lg-4" ng-repeat="event in userEvents | orderBy:'start.local'">
 		            <div class="thumbnail">
@@ -35,8 +35,8 @@
 		                                {{event.start.local | date:'medium'}} </p>
 		                        </div>
 		                        <div class="col-xs-12 col-md-6">
-		                            <a class="btn btn-primary btn-lg" href="" ng-click="openRegisterModal(event)">Rider</a>
-		                            <a class="btn btn-info btn-lg" href="" ng-click="openRegisterModal(event)">Driver</a>
+		                            <a class="btn btn-primary btn-lg" href="" ng-click="openRegisterModal(event)" ng-show="event.userStatus == 'rider'">Rider</a>
+		                            <a class="btn btn-info btn-lg" href="" ng-click="openRegisterModal(event)" ng-show="event.userStatus == 'driver'">Driver</a>
 		                        </div>
 		                    </div>
 		                </div>

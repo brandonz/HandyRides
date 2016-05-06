@@ -9,6 +9,7 @@
 	function controller($scope, $q, $cookies, $window, $resource, $modal){
 		var vm = $scope;
 		vm.show = 'home';
+		vm.loading = true;
 		vm.change = change;
 		vm.openModal = openModal;
 		vm.openRegisterModal = openRegisterModal;
@@ -32,11 +33,15 @@
 						else
 							vm.user = result[0];
 							angular.forEach(vm.user.events, function(eventObj){
-								$resource("https://www.eventbriteapi.com/v3/events/:eventId").query({token: JW2PZFPUASO3BMPSC2R3, eventId: eventObj.id}).$promise
+								$resource("https://www.eventbriteapi.com/v3/events/"+eventObj.id+"/?token=JW2PZFPUASO3BMPSC2R3").get({}).$promise
 									.then(function(eventRes){
+										// console.log(eventRes);
+										var neventObj = eventRes;
+										neventObj.userStatus = eventObj.status;
 										vm.userEvents.push(eventRes);
 									});
 							});
+							vm.loading = false;
 					});
 		}
 
