@@ -16,6 +16,7 @@
 		vm.user = {fname: ""};
 		vm.email = $cookies.email;
 		vm.passw = $cookies.passw;
+		vm.userEvents = [];
 
 		vm.logout = logout;
 
@@ -30,6 +31,12 @@
 							$window.location.href = "https://brandonz.mycpanel2.princeton.edu/HandyRides/login.html";
 						else
 							vm.user = result[0];
+							angular.forEach(vm.user.events, function(eventObj){
+								$resource("https://www.eventbriteapi.com/v3/events/:eventId").query({token: JW2PZFPUASO3BMPSC2R3, eventId: eventObj.id}).$promise
+									.then(function(eventRes){
+										vm.userEvents.push(eventRes);
+									});
+							});
 					});
 		}
 
