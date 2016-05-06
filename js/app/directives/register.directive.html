@@ -4,16 +4,36 @@
 
 
 <div class="modal-body">
-	<div>
+	<div ng-if="mc.show == 'main'">
 		<h4><center> Are you a </center></h4>
 		<div>
 		</div>
 		<h4><center> <button type = "button" class="btn btn-primary btn-lg">Rider</button> &nbsp or &nbsp
-			<button type = "button" class="btn btn-info btn-lg">Driver</button></center></h4>
+			<button type = "button" class="btn btn-info btn-lg" ng-click='mc.change("driver")'>Driver</button></center></h4>
 	</div>
 
-	<div>
-		<h4><center> How many riders can you take in your car? </center></h4>
+	<div ng-if="mc.show == 'driver'">
+		<center>
+			<h4>How many riders can you take in your car?</h4>
+			<br>
+
+			<md-radio-group ng-model="seats" layout="row">
+		      <md-radio-button value="1" ng-style="{'display':'inline'}"> 1</md-radio-button>
+		      <md-radio-button value="2" ng-style="{'display':'inline'}"> 2</md-radio-button>
+		      <md-radio-button value="3" ng-style="{'display':'inline'}"> 3</md-radio-button>
+		      <md-radio-button value="4" ng-style="{'display':'inline'}"> 4</md-radio-button>
+		      <md-radio-button value="5" ng-style="{'display':'inline'}"> 5</md-radio-button>
+		      <br>
+		      <md-radio-button value="6" ng-style="{'display':'inline'}"> 6</md-radio-button>
+		      <md-radio-button value="7" ng-style="{'display':'inline'}"> 7</md-radio-button>
+		      <md-radio-button value="8" ng-style="{'display':'inline'}"> 8</md-radio-button>
+		      <md-radio-button value="9" ng-style="{'display':'inline'}"> 9</md-radio-button>
+		      <md-radio-button value="10" ng-style="{'display':'inline'}">10</md-radio-button>
+		    </md-radio-group>
+
+		    <br>
+		    <br>
+	    </center>
 
 	</div>
 

@@ -13,6 +13,9 @@
 		imports.push('ngResource');
 		imports.push('ui.bootstrap');
 		imports.push('ngCookies');
+		imports.push('ngAnimate');
+		imports.push('ngAria');
+		imports.push('ngMaterial');
 		return imports;
 	}
 
