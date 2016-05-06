@@ -6,14 +6,16 @@
         .controller('listController', modalController);
 
 
-    function modalController($modalInstance, $resource, eventid, status) {
+    function modalController($modalInstance, $resource, eventid, status, $window) {
         var vm = this;
 
         vm.status = status;
         vm.id = eventid.id;
         vm.users = [];
 
+
         vm.cancel = cancel;
+        vm.sendemail = sendemail;
 
         populate();
 
@@ -32,6 +34,10 @@
                 });
         }
 
+        function sendemail(email, fname) {
+            console.log('test');
+            $window.open("mailto:"+ email + "?subject=HandyRides&body=Hello "+fname+", I would like to request to ride with you!","_self");
+        }
     }
 
 })();

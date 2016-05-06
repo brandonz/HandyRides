@@ -9,7 +9,10 @@
             <p class="txt_slogan"><i>Let's travel together</i></p>
         </div> 
 
+        <h2 ng-if='userEvents.length==0'>You Are Currently Not Registered For Any Events!</h2>
+        <center>
         <h2 ng-if='userEvents.length!=0'> Events You're Currently Registered For </h2>
+    	</center>
         <br>
 
 	    <center>
