@@ -33,6 +33,7 @@
 
 		function refresh() {
 			vm.loading = true;
+			vm.userEvents = [];
 			$resource('https://handyrides-server.herokuapp.com/api/users/:email/:passw').query({email:vm.email, passw: vm.passw}).$promise
 				.then(function(result){
 						if (result.length == 0)
