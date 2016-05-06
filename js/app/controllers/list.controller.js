@@ -10,7 +10,7 @@
         var vm = this;
 
         vm.status = status;
-        vm.id = eventid;
+        vm.id = eventid.id;
         vm.users = [];
 
         vm.cancel = cancel;
@@ -22,14 +22,13 @@
         }
 
         function populate() {
-            $resource("https://handyrides-server.herokuapp.com/api/events/" + vm.id).query().$promise
+            $resource("https://handyrides-server.herokuapp.com/api/events/:eventid").query({eventid: eventid}).$promise
                 .then(function(result){
-                    console.log(result);
-                    // var usersData = result[0].users;
-                    // angular.forEach(usersData, function(user){
-                    //     if (user.status=status)
-                    //         vm.users.push(user);
-                    // });
+                    var usersData = result[0].users;
+                    angular.forEach(usersData, function(user){
+                        if (user.status!=status)
+                            vm.users.push(user);
+                    });
                 });
         }
 

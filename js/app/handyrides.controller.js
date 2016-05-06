@@ -100,7 +100,7 @@
 		function openRiderList(eventID) {
 			var modalInstance = $modal.open({
 				templateUrl: 'js/app/directives/rider.directive.html',
-				controller: 'listController as mc',
+				controller: 'listController as lc',
 				size: 'lg',
 				resolve: {
 					eventid: function() {
@@ -115,8 +115,8 @@
 
 		function openDriverList(eventID) {
 			var modalInstance = $modal.open({
-				templateUrl: 'js/app/directives/rider.directive.html',
-				controller: 'listController as mc',
+				templateUrl: 'js/app/directives/driver.directive.html',
+				controller: 'listController as lc',
 				size: 'lg',
 				resolve: {
 					eventid: function() {
