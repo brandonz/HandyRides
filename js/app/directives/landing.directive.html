@@ -7,6 +7,41 @@
         <div class="templatemo-slogan text-center">
             <span class="txt_darkgrey">Welcome to </span><span class="txt_orange">HandyRides</span>
             <p class="txt_slogan"><i>Let's drive together</i></p>
-        </div>  
-    </div>
+        </div> 
+
+        <h3> Events You're Currently Registered For </h3>
+
+	    <center>
+	    <div class="row" ng-show="!events">
+	            <img src="./images/loading.gif">
+	    </div>
+	    </center>
+
+	    <div class="row" ng-show="show()">
+		    <div id="products" class="row list-group">
+		        <div class="item  col-xs-4 col-lg-4" ng-repeat="event in userEvents | orderBy:'start.local'">
+		            <div class="thumbnail">
+		                <img class="group list-group-image" ng-if="event.logo.url" ng-src="{{event.logo.url}}" alt="" />
+		                <img class="group list-group-image" ng-if="!event.logo.url" src="./images/Blair_Arch2.JPG" alt="" width = "450" height = "200"/>
+		                <div class="caption">
+		                    <h4 class="group inner list-group-item-heading">
+		                        <a href="{{event.url}}">{{event.name.text}}</a></h4>
+		                    <p class="group inner list-group-item-text">
+		                        <div>{{event.description.text.substring(0,100) + "..."}}</div>
+		                        <div><a href="" ng-click="openModal(event)">Read more</a></div></p>
+		                    <div class="row">
+		                        <div class="col-xs-12 col-md-6">
+		                            <p class="lead">
+		                                {{event.start.local | date:'medium'}} </p>
+		                        </div>
+		                        <div class="col-xs-12 col-md-6">
+		                            <a class="btn btn-primary btn-lg" href="" ng-click="openRegisterModal(event)">Rider</a>
+		                            <a class="btn btn-info btn-lg" href="" ng-click="openRegisterModal(event)">Driver</a>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div> 
+	    </div>
 </div>
