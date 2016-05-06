@@ -13,6 +13,8 @@
 		vm.change = change;
 		vm.openModal = openModal;
 		vm.openRegisterModal = openRegisterModal;
+		vm.openRiderList = openRiderList;
+		vm.openDriverList = openDriverList;
 		vm.refresh = refresh();
 
 		vm.user = {fname: ""};
