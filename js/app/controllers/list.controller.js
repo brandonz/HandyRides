@@ -22,14 +22,14 @@
         }
 
         function populate() {
-            $resource("https://handyrides-server.herokuapp.com/api/events/" + vm.id)
-                .query({}).$promise()
+            $resource("https://handyrides-server.herokuapp.com/api/events/" + vm.id).query().$promise
                 .then(function(result){
-                    var usersData = result[0].users;
-                    angular.forEach(usersData, function(user){
-                        if (user.status=status)
-                            vm.users.push(user);
-                    });
+                    console.log(result);
+                    // var usersData = result[0].users;
+                    // angular.forEach(usersData, function(user){
+                    //     if (user.status=status)
+                    //         vm.users.push(user);
+                    // });
                 });
         }
 
